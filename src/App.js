@@ -1,13 +1,20 @@
-import LoginForm from "./components/loginForm";
-import RegisterForm from "./components/registerForm";
+import Navbar from "./component/Navbar";
+import Login from "./component/Login";
+import Register from "./component/Register";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <LoginForm />
-      <RegisterForm />
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Login} />
+          <Route path='/register' component={Register} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
